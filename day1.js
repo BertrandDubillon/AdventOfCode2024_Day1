@@ -1,7 +1,6 @@
 function test(fileInput) {
 // const fileInput = document.getElementById('fileInput');
 const file = fileInput.files[0];
-console.log(file);
 const reader = new FileReader();
 reader.onload = function(event) {
   const fileContents = event.target.result;
@@ -33,15 +32,14 @@ reader.onload = function(event) {
 
    distance = [...distance, result]
 
-  };
-  console.log(distance);
+  };  
   distance.forEach((number) => {
     if (!isNaN(number)){
     total += number
   }
   })
-  console.log(total);
-  console.log(id1);
+  console.log("Result for the first star : "+total);
+  
   
   for (let i = 0; i < id1.length; i++) {
     const number=id1[i];
@@ -49,16 +47,11 @@ reader.onload = function(event) {
     
     //multiply number per many.length and add to total2
     if (!isNaN(number) && ! isNaN(many.length )){
-    total2 = total2 + (number * many.length);  
-    console.log(number + '+' + many.length  + '=' + total2);
+    total2 = total2 + (number * many.length); 
       
-  }
-  else {
-    console.log('NOT A NUMBER' + ':' + number  + ':' + many);
-    
-  }
+  } 
 }
-  console.log(total2);
+  console.log("Result for 2nd star : "+total2);
   
 
 };
